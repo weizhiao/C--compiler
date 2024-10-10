@@ -3,6 +3,7 @@
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include "syntaxtree.h"
+	extern struct node *boot;
 	extern int yylineno;
 	extern int yylex();
 	extern int yyrestart();

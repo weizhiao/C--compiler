@@ -4,7 +4,10 @@ all: calc
 calc: lexical.l syntax.y
 	bison -d syntax.y
 	flex lexical.l
-	gcc syntax.tab.c lex.yy.c main.c syntaxtree.c analysis.c hashtable.c type.c wordtype.c translate.c stmtlist.c -o parser
+	gcc syntax.tab.c lex.yy.c main.c syntaxtree.c analysis.c hashtable.c type.c wordtype.c translate.c stmtlist.c -I. -o parser
+
+clean:
+	rm -f parser syntax.tab.* lex.yy.c
 
 testall:
 	./parser 2.1
